@@ -2,7 +2,7 @@
 
 King's Personal C++ utility library for projects.
 
-This collection contains reusable helpers I use across multiple projects to reduce boilerplate and keep code clean.
+This collection contains reusable helpers I use across multiple projects/assignments to reduce boilerplate and keep code clean.
 
 ## Features
 
@@ -40,3 +40,50 @@ MyCPPUtils/
 git clone https://github.com/kingstapestry/MyCPPUtils.git external/MyCppUtils
 ```
 
+Then add the following to your project's **Additional Include Directories**:
+```bash
+$(ProjectDir)external/MyCPPUtils
+```
+
+### Option 2 - For submission (self-contained)
+
+Copy the folders you need into a project (usually into an `external/` or `utils/` folder) so the project is fully self contained.
+
+```bash
+#include "menu/DynamicMenu.h"
+#include "sorting/VectorSort.h"
+#include "web/WebPortal.h"
+#include "data/EntityManager.h"
+#include "console/Console.h"
+#include "common/Utils.h"
+```
+
+## Dependencies
+
+- **cpp-httplib** (single header) - required only if you use the WebPortal. See instructions below.
+
+## Notes
+
+- The purpose of this library is designed for rapid prototyping. 
+- All components are header-only (except the external `httplib.h`).
+- Feel free to modify anything to suit individual projects. 
+
+## Author
+
+King
+GitHub: https://github.com/kingstapestry
+
+---
+
+### How to download `httplib.h`
+
+1. Go to the official repository: **https://github.com/yhirose/cpp-httplib**
+2. Click on the file `httplib.h`
+3. Click the **Raw** button
+4. Right-click → **Save As...** and save it as `httplib.h`
+5. Place the file here in your repo:
+
+Alternative (command line):
+```bash
+curl -L https://raw.githubusercontent.com/yhirose/cpp-httplib/master/httplib.h -o web/httplib.h
+```
