@@ -33,3 +33,4 @@ ipch/
 # macOS junk
 .DS_Store
 MyCPPUtils/web/httplib.h
+/MyCPPUtils-Dev
