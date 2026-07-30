@@ -1,8 +1,8 @@
-# MyCppUtils
+# MyCPPUtils
 
-Personal C++ utility library for school assignments and small projects.
+King's Personal C++ utility library for projects.
 
-This collection contains reusable helpers I use across multiple assignments to reduce boilerplate and keep code clean.
+This collection contains reusable helpers I use across multiple projects to reduce boilerplate and keep code clean.
 
 ## Features
 
