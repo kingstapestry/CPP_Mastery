@@ -70,8 +70,7 @@ Copy the folders you need into a project (usually into an `external/` or `utils/
 
 ## Author
 
-King
-GitHub: https://github.com/kingstapestry
+Created by King | Last Updated: July 2026 | GitHub: https://github.com/kingstapestry
 
 ---
 
