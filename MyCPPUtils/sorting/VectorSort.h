@@ -1,0 +1,41 @@
+#pragma once
+// ============================================================
+// VectorSort.h
+// Easy sorting helpers for vectors of structs
+// ============================================================
+
+#include <vector>
+#include <algorithm>
+
+namespace Sort {
+
+	// --------------------------------------------------------
+	// Sort a vector by any member of the struct
+	//
+	// Example:
+	//   Sort::by(products, &Product::price);		// low to high
+	//   Sort::by(products, &Product::name, false); // Z to A
+	// --------------------------------------------------------
+	template<typename T, typename Member>
+	void by(std::vector<T>& data, Member T::* member, bool ascending = true) {
+		std::sort(data.begin(), data.end(),
+			[member, ascending](const T& a, const T& b) {
+				// Compare the chosen member of the two objects
+				if (ascending) {
+					return (a.*member) < (b.*member);	// ascending order
+				}
+				else {
+					return (a.*member) > (b.*member);	// descending order
+				}
+			});
+	}
+
+	// --------------------------------------------------------
+	// Advanced: Sort using your own custom logic
+	// --------------------------------------------------------
+	template<typename T, typename Compare>
+	void byCustom(std::vector<T>& data, Compare compareFunction) {
+		std::sort(data.begin(), data.end(), compareFunction);
+	}
+
+} // namespace Sort
