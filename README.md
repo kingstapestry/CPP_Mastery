@@ -2,38 +2,39 @@
 
 **My Journey to Mastering C and C++**
 
-A personal repository documenting my path from beginner to expert in C/C++.  
-This is where I store all my practice projects, and major final projects as I build strong low-level programming skills.
+A repository documenting my path from beginner to expert in C/C++.  
+This is where I store all my personal projects, and major final projects as I build strong low-level programming skills.
 
 ---
 
 ## 🎯 Goal
-**"EVERYTHING POSSIBLE"** — Become a confident, well-rounded C/C++ programmer capable of building real-world projects and transitioning smoothly into C# and game development.
+**"EVERYTHING POSSIBLE"** — Become a confident, well-rounded C/C++ programmer capable of building real-world applications, games you name it.
 
 ---
 
 ## 📚 What You'll Find Here
 
 ### Current Focus
-- **C Programming** (School Curriculum)
+- **C++ Programming**
 - **Pointers, Memory Management, Linked Lists**
 - **File Handling**
 - **Data Structures**
+- **OOP, Classes**
 - **Large Final Projects**
 
 ### Major Projects
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| **Who Wants to Be a Millionaire** | Full game with Question Editor, Lifelines, File I/O, and Doubly Linked List | In Progress |
+| **MyCPPUtils** | Collection of reusable helpers I use across multiple projects/assignments to reduce boilerplate and keep code clean. | In Progress |
 
-*(More projects will be added as the semester progresses)*
+*(More projects will be added)*
 
 ---
 
 ## 🛠 Skills Being Built
 
-- **Core C**: Pointers, Structs, Memory (Stack vs Heap), `malloc`/`free`
+- **Core C++**: Pointers, Structs, Memory (Stack vs Heap), `malloc`/`free`
 - **File I/O**: `r`, `w`, `a`, `r+`, `w+`, `a+` modes
 - **Data Structures**: Linked Lists (Single & Double)
 - **Problem Solving**: Clean code, debugging, memory management
