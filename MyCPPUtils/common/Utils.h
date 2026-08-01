@@ -1,7 +1,9 @@
 #pragma once
 // ============================================================
 // Utils.h
-// Common helper functions for input and small tasks.
+// Small helper functions for safer and cleaner input
+// 
+// Author: @kingstapestry 
 // ============================================================
 
 #include <string>
@@ -24,7 +26,7 @@ namespace Utils {
 
 	// --------------------------------------------------------
 	// Reads a full line of text (supports spaces)
-	// Example: std::string name = Utils::InputLine("Enter name: ")
+	// Example: std::string name = Utils::inputLine("Enter name: ")
 	// --------------------------------------------------------
 	inline std::string inputLine(const std::string& prompt = "") {
 		if (!prompt.empty()) {
@@ -71,7 +73,7 @@ namespace Utils {
 	}
 
 	// --------------------------------------------------------
-	// Converts any value to string (useful for building HTML or debug)
+	// Converts almost anything to string (useful for building HTML or debug)
 	// --------------------------------------------------------
 	template<typename T>
 	inline std::string toString(const T& value) {

@@ -1,7 +1,9 @@
 #pragma once
 // ============================================================
 // VectorSort.h
-// Easy sorting helpers for vectors of structs
+// Easy way to sort vectors of structs
+// 
+// Author: @kingstapestry 
 // ============================================================
 
 #include <vector>
