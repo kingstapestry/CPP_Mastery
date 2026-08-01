@@ -64,11 +64,11 @@ namespace Utils {
 		}
 
 		double value;
-		while (!(std::cin >> value)) {
+		while (!(std::cin >> value)) {	// try to read a double
 			std::cout << "Invalid number. Try again: ";
-			clearInput();
+			clearInput();	// clear bad input
 		}
-		clearInput();
+		clearInput();	// clear leftover newline
 		return value;
 	}
 

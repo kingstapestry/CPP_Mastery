@@ -15,6 +15,9 @@
 
 namespace Console {
 
+	// --------------------------------------------------------
+	// Clear terminal screen
+	// --------------------------------------------------------
 	inline void clear() {
 #ifdef _WIN32
 		system("cls");
@@ -23,16 +26,25 @@ namespace Console {
 #endif 
 	}
 
+	// --------------------------------------------------------
+	// Pause until user press Enter
+	// --------------------------------------------------------
 	inline void pause() {
 		std::cout << "\nPress Enter to continue...";
 		std::cin.ignore();
 		std::cin.get();
 	}
 
+	// --------------------------------------------------------
+	// Print a nice section title
+	// --------------------------------------------------------
 	inline void title(const std::string& text) {
 		std::cout << "\n========== " << text << " ==========\n";
 	}
 
+	// --------------------------------------------------------
+	// Print a seperator line
+	// --------------------------------------------------------
 	inline void line(char symbol = '-', int length = 40) {
 		std::cout << std::string(length, symbol) << "\n";
 	}
