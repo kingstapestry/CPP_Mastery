@@ -21,7 +21,7 @@ namespace Utils {
 	inline void clearInput() {
 		std::cin.clear();	// reset error flags (e.g. if user typed letters instead of numbers)
 		// Discard everything up to and including the next newline
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
 	}
 
 	// --------------------------------------------------------
