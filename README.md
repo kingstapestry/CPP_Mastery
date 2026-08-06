@@ -1,14 +1,9 @@
 # 🚀 CPP_Mastery
 
-**My Journey to Mastering C and C++**
+**My Journey to Mastering C++**
 
-A repository documenting my path from beginner to expert in C/C++.  
+A repository documenting my path from beginner to expert in C++.  
 This is where I store all my personal projects, and major final projects as I build strong low-level programming skills.
-
----
-
-## 🎯 Goal
-**"EVERYTHING POSSIBLE"** — Become a confident, well-rounded C/C++ programmer capable of building real-world applications, games you name it.
 
 ---
 
@@ -16,43 +11,33 @@ This is where I store all my personal projects, and major final projects as I bu
 
 ### Current Focus
 - **C++ Programming**
-- **Pointers, Memory Management, Linked Lists**
-- **File Handling**
-- **Data Structures**
 - **OOP, Classes**
-- **Large Final Projects**
+- **Pointers, Memory Management**
+- **Data Structures & Algorithms**
+- **C++ Utilities**
+- **Major Final Projects**
 
 ### Major Projects
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| **MyCPPUtils** | Collection of reusable helpers I use across multiple projects/assignments to reduce boilerplate and keep code clean. | In Progress |
+| **MyCPPUtils** | Collection of reusable helpers I use across multiple projects to reduce boilerplate and keep code clean. | Release v1.1.0 |
 
 *(More projects will be added)*
 
 ---
 
-## 🛠 Skills Being Built
-
-- **Core C++**: Pointers, Structs, Memory (Stack vs Heap), `malloc`/`free`
-- **File I/O**: `r`, `w`, `a`, `r+`, `w+`, `a+` modes
-- **Data Structures**: Linked Lists (Single & Double)
-- **Problem Solving**: Clean code, debugging, memory management
-- **Tools**: Visual Studio, Git, GitHub
-
----
-
-## 🚀 Future Plans
+## 🛠 What Is Being Built
 
 - Master Modern C++ (Classes, STL, Smart Pointers, Templates)
-- Build personal projects (Game engines, Tools, Data processors)
-- Portfolio-worthy projects
+- Personal Projects (Tools, Data Processors, possibly Artificial Intelligence)
+- Portfolio-Worthy Projects
 
 ---
 
-⭐ **Feel free to explore the projects!**  
+⭐ **Feel free to explore the repository!**  
 Feedback and suggestions are always welcome.
 
 ---
 
-**Last Updated:** June 2026
+**Last Updated:** August 2026
