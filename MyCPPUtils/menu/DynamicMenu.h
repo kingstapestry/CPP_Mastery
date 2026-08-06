@@ -1,7 +1,7 @@
 #pragma once
 // ============================================================
 // DynamicMenu.h
-// Create console menus easily
+// Make it easy to create interactive numbered menus
 // 
 // Author: @kingstapestry 
 // ============================================================
@@ -12,43 +12,49 @@
 #include <iostream>
 #include "../common/Utils.h"
 
+
 namespace Menu {
 
 	// --------------------------------------------------------
-	// One menu option (text + function to run)
+	// One option in the menu
+	// text = what the user sees
+	// action = the function that runs when chosen
 	//--------------------------------------------------------
 	struct Option {
-		std::string text;	// what the user sees
+		std::string text;				// what the user sees
 		std::function<void()> action;	// what happens when chosen
 	};
 
 	class DynamicMenu {
 	private:
-		std::string _title;	// menu title
+		std::string _title;				// menu title
 		std::vector<Option> _options;	// list of all options
-		bool _running = true;	// controls the loop
+		bool _running = true;			// controls the loop
 
 	public:
-		// Constructor
+		// Constructor - set the menu title
 		DynamicMenu(const std::string& menuTitle = "Menu") : _title(menuTitle) {}
 
 		// --------------------------------------------------------
-		// Add a normal option
+		// Add a normal option to the options list
+		// Lambda: [](){ ... } anonymous function with an empty capture list [] and no params (), ready to run a block of code
+		// std::function<void()> action is the type that receives the lambda inside this method
+		// Example: menu.add("View Shop", [](){ /* your_function() */ });
 		// --------------------------------------------------------
 		void add(const std::string& text, std::function<void()> action) {
 			_options.push_back({ text, action });
 		}
 
 		// --------------------------------------------------------
-		// Add an exit option that stops the menu
+		// Add an exit option that stops the menu loop
 		// --------------------------------------------------------
 		void addExit(const std::string& text = "Exit") {
-			// [this] captures the current menu object so we can set running = false
+			// [this] captures the current menu object so we can set _running = false
 			_options.push_back({ text, [this]() { _running = false; } });
 		}
 
 		// --------------------------------------------------------
-		// Start the menu
+		// Start the menu and keeps showing it until the user choose to Exit
 		// --------------------------------------------------------
 		void run() {
 			while (_running) {
@@ -72,7 +78,7 @@ namespace Menu {
 		}
 
 		// --------------------------------------------------------
-		// Stop the menu
+		// Stop the menu (rarely needed)
 		// --------------------------------------------------------
 		void stop() { _running = false; }
 	};

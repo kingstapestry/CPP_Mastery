@@ -1,7 +1,7 @@
 #pragma once
 // ============================================================
 // VectorSort.h
-// Easy way to sort vectors of structs
+// Easy way to sort vectors of class objects
 // 
 // Author: @kingstapestry 
 // ============================================================
@@ -9,12 +9,13 @@
 #include <vector>
 #include <algorithm>
 
+
 namespace Sort {
 
 	// --------------------------------------------------------
-	// Sort a vector by any member of the struct
+	// Sort a vector by any member variable of the class
 	//
-	// Example:
+	// Examples:
 	//   Sort::by(products, &Product::price);		// low to high
 	//   Sort::by(products, &Product::name, false); // Z to A
 	// --------------------------------------------------------
@@ -33,7 +34,7 @@ namespace Sort {
 	}
 
 	// --------------------------------------------------------
-	// Advanced: Sort using your own custom logic
+	// Advanced: Sort using your own custom comparison function
 	// --------------------------------------------------------
 	template<typename T, typename Compare>
 	void byCustom(std::vector<T>& data, Compare compareFunction) {

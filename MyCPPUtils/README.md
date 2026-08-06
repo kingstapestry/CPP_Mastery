@@ -1,16 +1,19 @@
-# MyCPPUtils
+# MyCPPUtils v1.1.0
 
-King's Personal C++ utility library for projects.
+King's C++ Object-Oriented Programming Utility Library.
 
-This collection contains reusable helpers I use across multiple projects/assignments to reduce boilerplate and keep code clean.
+This collection contains reusable helpers I use across multiple projects to reduce boilerplate and keep code clean.
+Feel free to use it for your projects, just leave credit where it's due. 
 
 ## Features
 
-- **DynamicMenu** – Easy console menus that can be built at runtime
-- **VectorSort** – Generic sorting for vectors of structs by any member
-- **WebPortal** – Lightweight localhost web server (powered by cpp-httplib) to visualize data in the browser
-- **EntityManager** – Simple generic container/manager for collections of objects
-- **Console & Utils** – Input helpers, screen clearing, and small quality-of-life functions
+- **Utils** – Collection of small helper functions, safe and clean inputs, random numbers, common tasks
+- **ClassUtils** – Helpers for working with vectors of class objects
+- **DynamicMenu** – Interactive numbered console menus
+- **VectorSort** – Sort vectors of class objects
+- **EntityManager** – Generic containers that can store any type of object
+- **Console** – Make console outputs cleaner, and some quality-of-life functions 
+- **WebPortal (WIP)** – Lightweight localhost web server (powered by cpp-httplib) to visualize data in the browser
 
 ## Folder Structure
 
@@ -18,6 +21,7 @@ This collection contains reusable helpers I use across multiple projects/assignm
 MyCPPUtils/
 ├── common/
 │   └── Utils.h
+│   └── ClassUtils.h
 ├── sorting/
 │   └── VectorSort.h
 ├── menu/
@@ -45,17 +49,13 @@ Then add the following to your project's **Additional Include Directories**:
 $(ProjectDir)external/MyCPPUtils
 ```
 
-### Option 2 - For submission (self-contained)
+### Option 2 - Submission for school projects/assignments (self-contained)
 
 Copy the folders you need into a project (usually into an `external/` or `utils/` folder) so the project is fully self contained.
 
 ```bash
-#include "menu/DynamicMenu.h"
-#include "sorting/VectorSort.h"
-#include "web/WebPortal.h"
-#include "data/EntityManager.h"
-#include "console/Console.h"
-#include "common/Utils.h"
+// Example:
+#include "../external/MyCPPUtils/common/Utils.h"
 ```
 
 ## Dependencies
@@ -70,7 +70,7 @@ Copy the folders you need into a project (usually into an `external/` or `utils/
 
 ## Author
 
-Created by King | Last Updated: July 2026 | GitHub: https://github.com/kingstapestry
+Created by King | Last Updated: August 2026 | GitHub: https://github.com/kingstapestry
 
 ---
 
