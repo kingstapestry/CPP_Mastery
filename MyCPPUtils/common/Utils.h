@@ -2,7 +2,7 @@
 // ============================================================
 // Utils.h
 // Collection of small helper functions for safer, cleaner input,
-// random numbers, and other common tasks
+// random numbers, and other common tasks in Modern C++
 // 
 // Author: @kingstapestry 
 // ============================================================
@@ -13,6 +13,8 @@
 #include <sstream>
 #include <cstdlib>
 #include <ctime>
+#include <array>
+#include <fstream>
 
 // Platform-specific includes for sleep function
 #ifdef _WIN32
@@ -41,10 +43,10 @@ namespace Utils {
 	// --------------------------------------------------------
 	inline std::string inputLine(const std::string& prompt = "") {
 		if (!prompt.empty()) {
-			std::cout << prompt;		// show the prompt if provided
+			std::cout << prompt;
 		}
 		std::string value;
-		std::getline(std::cin, value);	// read entire line including spaces
+		std::getline(std::cin, value);
 		return value;
 	}
 
@@ -58,18 +60,18 @@ namespace Utils {
 		}
 
 		int value;
-		while (!(std::cin >> value)) {	// try to read an int
+		while (!(std::cin >> value)) {
 			std::cout << "Invalid number. Try again: ";
-			clearInput();	// clear bad input
+			clearInput();
 		}
-		clearInput();		// clear leftover newline
+		clearInput();
 		return value;
 	}
 
 	// --------------------------------------------------------
 	// Reads a decimal number (double) with validation
 	// --------------------------------------------------------
-	inline int inputDouble(const std::string& prompt = "") {
+	inline double inputDouble(const std::string& prompt = "") {
 		if (!prompt.empty()) {
 			std::cout << prompt;
 		}
@@ -77,9 +79,9 @@ namespace Utils {
 		double value;
 		while (!(std::cin >> value)) {	// try to read a double
 			std::cout << "Invalid number. Try again: ";
-			clearInput();	// clear bad input
+			clearInput();
 		}
-		clearInput();		// clear leftover newline
+		clearInput();
 		return value;
 	}
 
@@ -102,6 +104,14 @@ namespace Utils {
 		if (value < minVal) return minVal;
 		if (value > maxVal) return maxVal;
 		return value;
+	}
+
+	// --------------------------------------------------------
+	// Call this ONCE at the beginning of main() if you use randomInt or chance
+	// It seeds the RNG
+	// --------------------------------------------------------
+	inline void initRandom() {
+		srand(static_cast<unsigned>(time(nullptr)));
 	}
 
 	// --------------------------------------------------------
@@ -142,11 +152,49 @@ namespace Utils {
 	}
 
 	// --------------------------------------------------------
-	// Call this ONCE at the beginning of main() if you use randomInt or chance
-	// It seeds the RNG
+	// Prints an array
 	// --------------------------------------------------------
-	inline void initRandom() {
-		srand(static_cast<unsigned>(time(nullptr)));
+	template<typename T, size_t N>
+	inline void printArray(const std::array<T, N>& arr, const std::string& title = "Array") {
+		std::cout << "\n=== " << title << " ===\n";
+		for (size_t i = 0; i < arr.size(); ++i) {
+			std::cout << i << ": " << arr[i] << "\n";
+		}
+	}
+
+	// --------------------------------------------------------
+	// Finds a value in an array. Returns index or -1 if not found
+	// --------------------------------------------------------
+	template<typename T, size_t N>
+	inline int findInArray(const std::array<T, N>& arr, const T& value) {
+		for (size_t i = 0; i < arr.size(); ++i) {
+			if (arr[i] == value) {
+				return static_cast<int>(i);
+			}
+		}
+		return -1;
+	}
+
+	// --------------------------------------------------------
+	// Writes content to a file. Returns true on success
+	// --------------------------------------------------------
+	inline bool writeToFile(const std::string& filename, const std::string& content) {
+		std::ofstream file(filename);
+		if (!file.is_open()) return false;
+		file << content;
+		file.close();
+		return true;
+	}
+
+	// --------------------------------------------------------
+	// Reads an entire file into a string. Returns empty string on failure
+	// --------------------------------------------------------
+	inline std::string readFromFile(const std::string& filename) {
+		std::fstream file(filename);
+		if (!file.is_open()) return "";
+		std::stringstream buffer;
+		buffer << file.rdbuf();
+		return buffer.str();
 	}
 
 } // namespace Utils

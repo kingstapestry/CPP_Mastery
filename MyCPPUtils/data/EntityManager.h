@@ -10,6 +10,7 @@
 #include <vector>
 #include <optional>
 #include <algorithm>
+#include <initializer_list>
 
 
 namespace Data {
@@ -20,6 +21,16 @@ namespace Data {
 		std::vector<T> _items;	// internal storage for the actual list of objects
 
 	public:
+		Manager() = default;
+
+		// --------------------------------------------------------
+		// Supports initializer list
+		// --------------------------------------------------------
+		Manager(std::initializer_list<T> list) {
+			for (const auto& item : list) {
+				_items.push_back(item);
+			}
+		}
 
 		// --------------------------------------------------------
 		// Add a new item to the manager

@@ -88,4 +88,24 @@ namespace ClassUtils {
 		return list[index];
 	}
 
+	// --------------------------------------------------------
+	// Helpers
+	// --------------------------------------------------------
+	inline int percent(int current, int maximum) {
+		if (maximum <= 0) return 0;
+		return (current * 100) / maximum;
+	}
+
+	inline void printBar(const std::string& label, int current, int maximum, int width = 20) {
+		int filled = (current * width) / maximum;
+		if (filled < 0) filled = 0;
+		if (filled > width) filled = width;
+
+		std::cout << label << " [";
+		for (int i = 0; i < width; ++i) {
+			std::cout << (i < filled ? '#' : '-');
+		}
+		std::cout << "] " << current << "/" << maximum << "\n";
+	}
+
 } // namespace ClassUtils

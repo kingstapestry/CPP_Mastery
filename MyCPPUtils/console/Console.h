@@ -19,7 +19,7 @@
 
 
 namespace Console {
-
+	
 	// --------------------------------------------------------
 	// Clear entire terminal screen
 	// --------------------------------------------------------
@@ -88,6 +88,15 @@ namespace Console {
 		int padding = (width - static_cast<int>(text.length())) / 2;
 		if (padding < 0) padding = 0;
 		std::cout << std::string(padding, ' ') << text << "\n";
+	}
+
+	// --------------------------------------------------------
+	// Header with lines above and below
+	// --------------------------------------------------------
+	inline void header(const std::string& text) {
+		line('=');
+		center(text);
+		line('=');
 	}
 
 } // namespace Console
