@@ -21,7 +21,8 @@ This is where I store all my personal projects, and major final projects as I bu
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| **MyCPPUtils** | Collection of reusable helpers I use across multiple projects to reduce boilerplate and keep code clean. | Release v1.1.0 |
+| **MyCPPUtils** | Collection of reusable helpers I use across multiple projects to reduce boilerplate and keep code clean. | v1.3.0 |
+| **NexusCLI** | Full-featured terminal productivity tool with persistence, tags, priorities, search, and statistics. | WIP |
 
 *(More projects will be added)*
 
