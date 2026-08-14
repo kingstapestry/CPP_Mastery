@@ -197,4 +197,21 @@ namespace Utils {
 		return buffer.str();
 	}
 
+	// --------------------------------------------------------
+	// Convert time_t to string
+	// --------------------------------------------------------
+	inline std::string timeToString(std::time_t time) {
+		char buffer[20];
+		std::tm timeInfo{};
+
+#ifdef _WIN32
+		localtime_s(&timeInfo, &time);	// Windows
+#else
+		localtime_r(&item, &timeInfo);	// Linux/Mac
+#endif // _WIN32
+
+		std::strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M", &timeInfo);
+		return std::string(buffer);
+	}
+
 } // namespace Utils

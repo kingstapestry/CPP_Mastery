@@ -9,6 +9,9 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <iomanip>
+#include <functional>
+#include <algorithm>
 
 // Platform-specific includes for clear function
 #ifdef _WIN32
@@ -19,7 +22,7 @@
 
 
 namespace Console {
-	
+
 	// --------------------------------------------------------
 	// Clear entire terminal screen
 	// --------------------------------------------------------
@@ -97,6 +100,58 @@ namespace Console {
 		line('=');
 		center(text);
 		line('=');
+	}
+
+	// --------------------------------------------------------
+	// Column definition
+	// --------------------------------------------------------
+	template<typename T>
+	struct Column {
+		std::string header;
+		std::function<std::string(const T&)> getter;
+	};
+
+	// --------------------------------------------------------
+	// Dynamic table that works with any class
+	// --------------------------------------------------------
+	template<typename T>
+	inline void table(const std::vector<T>& items, const std::vector<Column<T>>& columns) {
+		if (columns.empty()) return;
+
+		// Calculate column widths
+		std::vector<size_t> widths(columns.size());
+
+		for (size_t i = 0; i < columns.size(); ++i) {
+			widths[i] = columns[i].header.length();
+		}
+
+		for (const auto& item : items) {
+			for (size_t i = 0; i < columns.size(); ++i) {
+				std::string value = columns[i].getter(item);
+				widths[i] = (std::max)(widths[i], value.length());
+			}
+		}
+
+		// Print header
+		for (size_t i = 0; i < columns.size(); ++i) {
+			std::cout << std::left << std::setw(static_cast<int>(widths[i]) + 2) << columns[i].header;
+		}
+		std::cout << "\n";
+
+		// Seperator
+		for (size_t i = 0; i < columns.size(); ++i) {
+			std::cout << std::string(widths[i], '-') << "  ";
+		}
+		std::cout << "\n";
+
+		// Print rows
+		for (const auto& item : items) {
+			for (size_t i = 0; i < columns.size(); ++i) {
+				std::string value = columns[i].getter(item);
+				std::cout << std::left << std::setw(static_cast<int>(widths[i]) + 2) << value;
+			}
+			std::cout << "\n";
+		}
 	}
 
 } // namespace Console

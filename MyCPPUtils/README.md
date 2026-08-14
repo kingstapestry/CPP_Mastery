@@ -1,4 +1,4 @@
-# MyCPPUtils v1.2.0
+# MyCPPUtils v1.3.0
 
 King's C++ Object-Oriented Programming Utility Library.
 
