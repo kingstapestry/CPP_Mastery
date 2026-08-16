@@ -64,6 +64,44 @@ namespace Data {
 		}
 
 		// --------------------------------------------------------
+		// Replace the first item that matches the condition
+		// Returns true if an item was updated
+		// --------------------------------------------------------
+		template<typename Predicate>
+		bool updateIf(Predicate condition, const T& newItem) {
+			for (auto& item : _items) {
+				if (condition(item)) {
+					item = newItem;		// replace the object
+					return true;
+				}
+			}
+			return false;				// nothing matched
+		}
+
+		// --------------------------------------------------------
+		// Replace item at a specific index
+		// Returns true if the index was valid
+		// --------------------------------------------------------
+		bool updateAt(size_t index, const T& newItem) {
+			if (index >= _items.size()) return false;
+			_items[index] = newItem;
+			return true;
+		}
+
+		// --------------------------------------------------------
+		// Replace by exact match (useful if your class has operator ==)
+		// --------------------------------------------------------
+		bool replace(const T& oldItem, const T& newItem) {
+			for (auto& item : _items) {
+				if (item == oldItem) {	// requires operator ==
+					item = newItem;
+					return true;
+				}
+			}
+			return false;
+		}
+
+		// --------------------------------------------------------
 		// Returns the full list (can be modified)
 		// --------------------------------------------------------
 		std::vector<T>& all() { return _items; }
