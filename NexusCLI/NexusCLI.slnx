@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="NexusCLI/NexusCLI.vcxproj" />
+  <Project Path="NexusCLI/NexusCLI.vcxproj" Id="c00a414f-f02e-4400-acc0-f3a45b8d7119" />
 </Solution>
