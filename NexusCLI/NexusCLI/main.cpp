@@ -1,12 +1,10 @@
 #include "Task.h"
+#include "TaskManager.h"
 
 #include "MyCPPUtils/menu/DynamicMenu.h"
 #include "MyCPPUtils/console/Console.h"
 
 int main() {
-	Data::Manager<Task> tasks;
-	Menu::DynamicMenu menu;
-
 	std::cout << R"(
  _   _ _______  ___   _ ____     ____ _     ___ 
  | \ | | ____\ \/ / | | / ___|   / ___| |   |_ _|
@@ -16,6 +14,12 @@ int main() {
                                                  
 
 )";
+
+	Data::Manager<Task> tasks;
+	Menu::DynamicMenu menu;
+
+	std::cout << "Loading existing tasks...\n";
+	TaskManager::loadTasks(tasks);
 
 	menu.add("Add Task", [&] {
 		Console::clear();
@@ -138,9 +142,11 @@ int main() {
 		Console::success("Task updated");
 		});
 
-
 	menu.addExit();
 	menu.run();
+
+	std::cout << "Saving existing tasks...\n";
+	TaskManager::saveTasks(tasks);
 	
 	return 0;
 }

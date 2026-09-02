@@ -28,14 +28,19 @@ public:
 	Status getStatus() const;
 	std::time_t getCreatedAt() const;
 
+	void setId(int id);
 	void setTitle(const std::string& title);
 	void setDescription(const std::string& description);
 	void setPriority(Priority priority);
 	void setStatus(Status status);
+	void setCreatedAt(std::time_t createdAt);
 
 	std::string priorityToString(Priority priority) const;
 	std::string statusToString(Status status) const;
 	void displayTask() const;
+	std::string toFileString() const;
 
 	static void displayAllTasks(const Data::Manager<Task>& tasks);
+	static void setNextId(int id);
+	static Task fromFileString(const std::string& line);
 };

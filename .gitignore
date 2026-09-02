@@ -34,3 +34,4 @@ ipch/
 .DS_Store
 MyCPPUtils/web/httplib.h
 /MyCPPUtils-Dev
+NexusCLI/NexusCLI/data/tasks.txt
