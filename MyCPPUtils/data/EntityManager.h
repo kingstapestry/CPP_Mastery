@@ -64,6 +64,17 @@ namespace Data {
 		}
 
 		// --------------------------------------------------------
+		// Find the first item that matches a condition (const version)
+		// Returns: std::nullopt if nothing is found
+		// --------------------------------------------------------
+		template<typename Predicate>
+		std::optional<T> findIf(Predicate condition) const {
+			auto it = std::find_if(_items.begin(), _items.end(), condition);
+			if (it != _items.end()) return *it;
+			return std::nullopt;
+		}
+
+		// --------------------------------------------------------
 		// Replace the first item that matches the condition
 		// Returns true if an item was updated
 		// --------------------------------------------------------

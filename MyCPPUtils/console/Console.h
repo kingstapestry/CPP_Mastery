@@ -1,13 +1,14 @@
 #pragma once
 // ============================================================
 // Console.h
-// Simple helpers to make console output look cleaner
+// Simple helpers to make console output look cleaner.
 // 
 // Author: @kingstapestry 
 // ============================================================
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <limits>
 #include <iomanip>
 #include <functional>

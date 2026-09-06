@@ -1,4 +1,4 @@
-# MyCPPUtils v1.3.0
+# MyCPPUtils v1.3.1
 
 King's C++ Object-Oriented Programming Utility Library.
 
@@ -7,10 +7,8 @@ Feel free to use it for your projects, just leave credit where it's due.
 
 ## Features
 
-- **Utils** – Collection of small helper functions, safe and clean inputs, random numbers, common tasks
-- **ClassUtils** – Helpers for working with vectors of class objects
+- **Utils** – Collection of general helpers
 - **DynamicMenu** – Interactive numbered console menus
-- **VectorSort** – Sort vectors of class objects
 - **EntityManager** – Generic containers that can store any type of object
 - **Console** – Make console outputs cleaner, and some quality-of-life functions 
 - **WebPortal (WIP)** – Lightweight localhost web server (powered by cpp-httplib) to visualize data in the browser
@@ -21,9 +19,6 @@ Feel free to use it for your projects, just leave credit where it's due.
 MyCPPUtils/
 ├── common/
 │   └── Utils.h
-│   └── ClassUtils.h
-├── sorting/
-│   └── VectorSort.h
 ├── menu/
 │   └── DynamicMenu.h
 ├── web/
@@ -70,7 +65,7 @@ Copy the folders you need into a project (usually into an `external/` or `utils/
 
 ## Author
 
-Created by King | Last Updated: August 2026 | GitHub: https://github.com/kingstapestry
+Created by King | Last Updated: September 2026 | GitHub: https://github.com/kingstapestry
 
 ---
 

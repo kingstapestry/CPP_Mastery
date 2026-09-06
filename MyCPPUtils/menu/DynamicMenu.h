@@ -1,7 +1,7 @@
 #pragma once
 // ============================================================
 // DynamicMenu.h
-// Make it easy to create interactive numbered menus
+// Make it easy to create interactive numbered menus.
 // 
 // Author: @kingstapestry 
 // ============================================================
